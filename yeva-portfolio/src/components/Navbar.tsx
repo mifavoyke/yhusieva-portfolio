@@ -5,7 +5,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import clsx from 'clsx'; // optional for neat class handling
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -29,10 +28,12 @@ const Navbar = () => {
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
+          <Link href="/projects">
           <span className="relative px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer group">
             <span className="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 blur-sm transition duration-300"></span>
             <span className="relative z-10 text-neutral-200 group-hover:text-white">PROJECTS</span>
-          </span>
+          </span> 
+          </Link>
 
           {showDropdown && (
             <motion.ul

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="w-full text-neutral-400 text-sm">
       {/* Gradient separator line */}
-      <div className="h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 opacity-30"></div>
+      <div className="h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 opacity-40"></div>
 
       {/* Footer content */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6 px-8 bg-zinc-950/80 backdrop-blur-sm">
