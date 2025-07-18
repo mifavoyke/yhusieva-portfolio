@@ -1,103 +1,79 @@
-import Image from "next/image";
+'use client'
+
+import BackgroundGlow from '../components/BackgroundGlow'
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative w-full min-h-screen text-neutral-200 overflow-hidden">
+      <BackgroundGlow />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* HERO */}
+      <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center">
+          <p className="text-fuchsia-400 italic text-sm">[3D avatar placeholder - coming soon]</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
+          Welcome to my world
+        </h1>
+      </section>
+
+      {/* ABOUT */}
+      <section className="py-20 px-6 flex flex-col items-center text-center">
+        <h2 className="text-3xl font-semibold mb-8 text-pink-400">About Me</h2>
+        <p className="max-w-3xl text-lg leading-relaxed text-neutral-300 mb-10">
+          Hi, I'm Yeva — a software engineer with a taste for sleek design, elegant code, and a touch of cyberpunk flair. I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.
+        </p>
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-20 px-6 text-center relative z-10">
+        <div className="max-w-2xl mx-auto bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 text-purple-500">
+          <h2 className="text-3xl font-semibold mb-8">Contact Me</h2>
+          <form
+            className="flex flex-col gap-6"
+            onSubmit={(e) => {
+              e.preventDefault()
+              const form = e.target as HTMLFormElement
+              const formData = new FormData(form)
+              console.log('Form submitted:', {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+              })
+              form.reset()
+            }}
+          >
+            <input
+              name="name"
+              type="text"
+              placeholder="Your name"
+              required
+              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Your email"
+              required
+              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
+            />
+            <textarea
+              name="message"
+              rows={5}
+              placeholder="Your message"
+              required
+              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="relative px-6 py-3 rounded-xl font-medium text-neutral-200 group transition-all duration-300"
+            >
+              <span className="absolute inset-0 rounded-xl bg-zinc-800 group-hover:bg-gradient-to-r from-pink-500 to-purple-500 opacity-30 group-hover:opacity-100 blur-sm transition duration-300"></span>
+              <span className="relative z-10">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
