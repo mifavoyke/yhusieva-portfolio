@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import BackgroundGlow from '../../components/BackgroundGlow'
 
 const projects = {
   featured: [
@@ -54,24 +55,29 @@ const projects = {
   ],
 }
 
-function ProjectCard({ project, floating = false }: any) {
+function ProjectCard({ project, floating = false, highlighted = false }: any) {
   const [flipped, setFlipped] = useState(false)
 
   return (
     <motion.div
-      className={`relative w-72 h-72 text-white cursor-pointer ${floating ? 'animate-floating' : ''
-        } group`}
+      className={`relative ${highlighted ? 'w-80 h-80' : 'w-64 h-64'} text-white cursor-pointer ${floating ? 'animate-floating' : ''} group`}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
       <motion.div
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
-        className="absolute w-full h-full rounded-xl bg-[radial-gradient(circle_at_center,_#e879f9,_#9333ea)] opacity-90 shadow-[0_0_40px_#e879f988] group-hover:shadow-[0_0_60px_#e879f9cc] transform-style-preserve-3d"
+        className={`absolute w-full h-full rounded-xl ${floating
+          ? 'bg-[radial-gradient(circle_at_center,_#e879f9,_#9333ea,_#0a0a0a00)]'
+          : project.color === 'neon-border'
+            ? 'bg-zinc-950 border border-fuchsia-400/30 shadow-[0_0_15px_#f0abfc44] hover:shadow-[0_0_25px_#f0abfcaa]'
+            : project.color // for bright hackathon cards
+          } opacity-90 shadow-inner transform-style-preserve-3d`}
         style={{
           backfaceVisibility: 'hidden',
         }}
       >
+        {/* Front content: project title and description */}
         <div className="flex flex-col items-center justify-center h-full text-center p-4">
           <h3 className="text-xl font-bold mb-2">{project.title}</h3>
           <p className="text-sm text-fuchsia-200">{project.description}</p>
@@ -87,56 +93,88 @@ function ProjectCard({ project, floating = false }: any) {
       >
         <p className="text-sm mb-1 text-purple-400">{project.date}</p>
         <p className="text-sm mb-3">⏱ {project.hours} hours</p>
-        <p className="text-sm mb-1">🛠 Tech used:</p>
+        <p className="text-sm mb-1">Tech used:</p>
         <ul className="list-disc list-inside text-sm text-fuchsia-300">
           {project.tech.map((tool: string, idx: number) => (
             <li key={idx}>{tool}</li>
           ))}
+          {project.link && (
+            <a
+              href={project.link}
+              className="inline-block mt-4 text-sm text-pink-400 hover:text-fuchsia-300 transition"
+            >
+              🔗 View More
+            </a>
+          )}
         </ul>
       </motion.div>
-      {/* Shadow underneath */}
-      {floating && (
-        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-56 h-2 bg-gradient-radial from-pink-400/40 to-transparent blur-2xl" />
-      )}
     </motion.div>
   )
 }
 
+// bg-zinc-950
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen px-6 py-16 bg-zinc-950 text-white">
-      <section className="mb-20">
+    <div className="relative w-full min-h-screen text-neutral-200 overflow-hidden">
+      <BackgroundGlow />
+    <main className="min-h-screen px-6 py-16 text-white">
+      {/* Featured Projects */}
+      <section className="mb-28 relative">
         <h2 className="text-3xl font-semibold text-pink-400 mb-10 text-center">
           Featured Projects
         </h2>
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="flex flex-wrap justify-center gap-20 relative z-10">
           {projects.featured.map((project, idx) => (
-            <ProjectCard key={idx} project={project} floating />
+            <div key={idx} className="relative">
+              <ProjectCard
+                project={project}
+                floating
+                highlighted={idx < 2}
+              />
+              {idx < 2 && (
+                <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 w-60 h-7 bg-[radial-gradient(ellipse_at_center,_#F03C54cc,_#f0abfc,_#0a0a0a00)] blur-xl rounded-full z-0" />
+              )}
+            </div>
           ))}
         </div>
       </section>
-
+      
+      {/* Hackathons */}
       <section className="mb-20">
         <h2 className="text-2xl font-semibold text-purple-400 mb-8 text-center">
           Hackathons
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-12">
           {projects.hackathons.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
+            <ProjectCard
+              key={idx}
+              project={{
+                ...project,
+                color: 'bg-[radial-gradient(circle_at_center,_#ec4899,_#ec489999,_#0a0a0a00)]',
+              }}
+            />
           ))}
         </div>
       </section>
 
+      {/* Other */}
       <section>
         <h2 className="text-2xl font-semibold text-fuchsia-400 mb-8 text-center">
           Other Projects
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-12">
           {projects.other.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
+            <ProjectCard
+              key={idx}
+              project={{
+                ...project,
+                color: 'neon-border',
+              }}
+            />
           ))}
         </div>
       </section>
     </main>
+    </div>
   )
 }
