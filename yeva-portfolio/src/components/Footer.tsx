@@ -12,13 +12,13 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6 px-8 bg-zinc-950/80 backdrop-blur-sm">
         <span>@2025 Portfolio. Made with love and lots of coffee.</span>
         <div className="flex gap-6 text-xl">
-          <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
+          <a href="https://github.com/mifavoyke" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+          <a href="https://www.linkedin.com/in/yeva-husieva/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
             <FaLinkedin />
           </a>
-          <a href="mailto:your@email.com" className="hover:text-fuchsia-400 transition">
+          <a href="mailto:husievayeva@gmail.com" className="hover:text-fuchsia-400 transition">
             <FaEnvelope />
           </a>
         </div>

@@ -1,0 +1,71 @@
+{
+  "featured": [
+    {
+      "title": "miniRT",
+      "description": "A mini raytracer built from scratch in C, rendering realistic 3D scenes with lights, shadows, and reflection.",
+      "date": "May–June 2024",
+      "hours": 90,
+      "tech": ["C", "Math", "Raytracing", "MLX42"],
+      "link": "https://github.com/mifavoyke/miniRT",
+      "image": "/images/minirt.png"
+    },
+    {
+      "title": "FdF",
+      "description": "A wireframe terrain renderer in isometric projection. Parses elevation maps and draws them with depth perception.",
+      "date": "March–April 2024",
+      "hours": 60,
+      "tech": ["C", "Graphics", "MLX42", "Algorithms"],
+      "link": "https://github.com/mifavoyke/FdF",
+      "image": "/images/fdf.png"
+    }
+  ],
+  "hackathons": [
+    {
+      "title": "Rackaton",
+      "description": "A web app that promotes sustainable wardrobe habits through AI-driven clothing suggestions and carbon footprint tracking.",
+      "date": "Oct 2023",
+      "hours": 36,
+      "tech": ["Next.js", "Supabase", "TailwindCSS", "AI API"],
+      "link": "https://github.com/mifavoyke/Rackaton",
+      "image": "/images/rackaton.png"
+    },
+    {
+      "title": "GreenHack",
+      "description": "Hackathon project tackling environmental impact through data-driven green habit tracking and gamification.",
+      "date": "June 2024",
+      "hours": 48,
+      "tech": ["React", "Firebase", "OpenAI", "Leaflet.js"],
+      "link": "https://github.com/mifavoyke/GreenHack",
+      "image": "/images/greenhack.png"
+    }
+  ],
+  "other": [
+    {
+      "title": "Minishell",
+      "description": "A fully functional Unix shell written in C. Handles pipes, redirections, built-ins, signal handling and environment variables.",
+      "date": "Feb 2024",
+      "hours": 55,
+      "tech": ["C", "Unix", "Parsing", "System Calls"],
+      "link": "https://github.com/bratzwitch/minishell",
+      "image": "/images/minishell.png"
+    },
+    {
+      "title": "Philosophers",
+      "description": "A concurrency simulation based on the Dining Philosophers problem. Implements threads, mutexes, and race condition prevention.",
+      "date": "Jan 2024",
+      "hours": 35,
+      "tech": ["C", "POSIX Threads", "Concurrency"],
+      "link": "https://github.com/mifavoyke/Philosophers",
+      "image": "/images/philosophers.png"
+    },
+    {
+      "title": "Push_swap",
+      "description": "A sorting algorithm visualiser with stack operations. Designed for algorithm optimisation under strict operation limits.",
+      "date": "Dec 2023",
+      "hours": 40,
+      "tech": ["C", "Sorting Algorithms", "Stacks", "Big-O Analysis"],
+      "link": "https://github.com/mifavoyke/Push_swap",
+      "image": "/images/push_swap.png"
+    }
+  ]
+}

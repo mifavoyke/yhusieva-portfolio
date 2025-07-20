@@ -29,6 +29,9 @@ export default function Home() {
       <section className="py-20 px-6 text-center relative z-10">
         <div className="max-w-2xl mx-auto bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 text-purple-500">
           <h2 className="text-3xl font-semibold mb-8">Contact Me</h2>
+          <p className="max-w-3xl text-base leading-relaxed text-neutral-300 mb-10 text-left">
+            <b>Email: </b><a href="mailto:husievayeva@gmail.com" className="text-neutral-300 hover:text-fuchsia-300 transition">yevahusieva@gmail.com</a>
+          </p>
           <form
             className="flex flex-col gap-6"
             onSubmit={(e) => {

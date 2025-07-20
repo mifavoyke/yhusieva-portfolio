@@ -3,57 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import BackgroundGlow from '../../components/BackgroundGlow'
-
-const projects = {
-  featured: [
-    {
-      title: 'Cosmic Portfolio',
-      description: 'A 3D interactive site showcasing my projects and skills in a galaxy theme.',
-      date: 'May-June 2025',
-      hours: 45,
-      tech: ['Next.js', 'Three.js', 'Framer Motion', 'TailwindCSS'],
-    },
-    {
-      title: 'AI Travel Planner',
-      description: 'A smart planner that suggests itineraries using OpenAI and Google Maps.',
-      date: 'April 2025',
-      hours: 35,
-      tech: ['React', 'Node.js', 'Express', 'OpenAI API'],
-    },
-  ],
-  hackathons: [
-    {
-      title: 'HackFit',
-      description: 'Fitness gamification tracker made in 36 hours for a wellness hackathon.',
-      date: 'Nov 2024',
-      hours: 36,
-      tech: ['React', 'Firebase', 'Chart.js'],
-    },
-    {
-      title: 'CodeBuddy',
-      description: 'A matchmaking app for coding partners built in 24 hours.',
-      date: 'Feb 2025',
-      hours: 24,
-      tech: ['Vue.js', 'Supabase', 'TailwindCSS'],
-    },
-  ],
-  other: [
-    {
-      title: 'Mini Shell',
-      description: 'A custom UNIX shell built in C for a system programming course.',
-      date: 'Jan-Feb 2024',
-      hours: 50,
-      tech: ['C', 'POSIX', 'Bash'],
-    },
-    {
-      title: 'BookSwap',
-      description: 'A book exchange web app for students.',
-      date: 'Oct 2023',
-      hours: 30,
-      tech: ['Django', 'PostgreSQL', 'Bootstrap'],
-    },
-  ],
-}
+import projects from './projects.json'
 
 function ProjectCard({ project, floating = false, highlighted = false }: any) {
   const [flipped, setFlipped] = useState(false)
@@ -71,13 +21,12 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
           ? 'bg-[radial-gradient(circle_at_center,_#e879f9,_#9333ea,_#0a0a0a00)]'
           : project.color === 'neon-border'
             ? 'bg-zinc-950 border border-fuchsia-400/30 shadow-[0_0_15px_#f0abfc44] hover:shadow-[0_0_25px_#f0abfcaa]'
-            : project.color // for bright hackathon cards
+            : project.color
           } opacity-90 shadow-inner transform-style-preserve-3d`}
         style={{
           backfaceVisibility: 'hidden',
         }}
       >
-        {/* Front content: project title and description */}
         <div className="flex flex-col items-center justify-center h-full text-center p-4">
           <h3 className="text-xl font-bold mb-2">{project.title}</h3>
           <p className="text-sm text-fuchsia-200">{project.description}</p>
@@ -94,87 +43,95 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
         <p className="text-sm mb-1 text-purple-400">{project.date}</p>
         <p className="text-sm mb-3">⏱ {project.hours} hours</p>
         <p className="text-sm mb-1">Tech used:</p>
-        <ul className="list-disc list-inside text-sm text-fuchsia-300">
+        <ul className="list-disc list-inside text-sm text-fuchsia-300 mb-2">
           {project.tech.map((tool: string, idx: number) => (
             <li key={idx}>{tool}</li>
           ))}
-          {project.link && (
-            <a
-              href={project.link}
-              className="inline-block mt-4 text-sm text-pink-400 hover:text-fuchsia-300 transition"
-            >
-              🔗 View More
-            </a>
-          )}
         </ul>
+        {project.link && (
+          <a
+            href={project.link}
+            className="inline-block mt-2 text-sm text-pink-400 hover:text-fuchsia-300 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 View More
+          </a>
+        )}
+        {project.image && (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="mt-2 w-full rounded-md object-cover"
+          />
+        )}
       </motion.div>
     </motion.div>
   )
 }
 
-// bg-zinc-950
 export default function ProjectsPage() {
   return (
     <div className="relative w-full min-h-screen text-neutral-200 overflow-hidden">
       <BackgroundGlow />
-    <main className="min-h-screen px-6 py-16 text-white">
-      {/* Featured Projects */}
-      <section className="mb-28 relative">
-        <h2 className="text-3xl font-semibold text-pink-400 mb-10 text-center">
-          Featured Projects
-        </h2>
-        <div className="flex flex-wrap justify-center gap-20 relative z-10">
-          {projects.featured.map((project, idx) => (
-            <div key={idx} className="relative">
-              <ProjectCard
-                project={project}
-                floating
-                highlighted={idx < 2}
-              />
-              {idx < 2 && (
-                <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 w-60 h-7 bg-[radial-gradient(ellipse_at_center,_#F03C54cc,_#f0abfc,_#0a0a0a00)] blur-xl rounded-full z-0" />
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-      
-      {/* Hackathons */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-semibold text-purple-400 mb-8 text-center">
-          Hackathons
-        </h2>
-        <div className="flex flex-wrap justify-center gap-12">
-          {projects.hackathons.map((project, idx) => (
-            <ProjectCard
-              key={idx}
-              project={{
-                ...project,
-                color: 'bg-[radial-gradient(circle_at_center,_#ec4899,_#ec489999,_#0a0a0a00)]',
-              }}
-            />
-          ))}
-        </div>
-      </section>
+      <main className="min-h-screen px-6 py-16 text-white">
+        {/* Featured */}
+        <section className="mb-28 relative">
+          <h2 className="text-3xl font-semibold text-pink-400 mb-10 text-center">
+            Featured Projects
+          </h2>
+          <div className="flex flex-wrap justify-center gap-20 relative z-10">
+            {projects.featured.map((project, idx) => (
+              <div key={idx} className="relative">
+                <ProjectCard
+                  project={project}
+                  floating
+                  highlighted={idx < 2}
+                />
+                {idx < 2 && (
+                  <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 w-55 h-7 bg-[radial-gradient(ellipse_at_center,_#F03C54cc,_#f0abfc,_#0a0a0a00)] blur-xl rounded-full z-0" />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Other */}
-      <section>
-        <h2 className="text-2xl font-semibold text-fuchsia-400 mb-8 text-center">
-          Other Projects
-        </h2>
-        <div className="flex flex-wrap justify-center gap-12">
-          {projects.other.map((project, idx) => (
-            <ProjectCard
-              key={idx}
-              project={{
-                ...project,
-                color: 'neon-border',
-              }}
-            />
-          ))}
-        </div>
-      </section>
-    </main>
+        {/* Hackathons */}
+        <section className="mb-20">
+          <h2 className="text-2xl font-semibold text-purple-400 mb-8 text-center">
+            Hackathons
+          </h2>
+          <div className="flex flex-wrap justify-center gap-12">
+            {projects.hackathons.map((project, idx) => (
+              <ProjectCard
+                key={idx}
+                project={{
+                  ...project,
+                  color: 'bg-[radial-gradient(circle_at_center,_#ec4899,_#ec489999,_#0a0a0a00)]',
+                }}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Other */}
+        <section>
+          <h2 className="text-2xl font-semibold text-fuchsia-400 mb-8 text-center">
+            Other Projects
+          </h2>
+          <div className="flex flex-wrap justify-center gap-12">
+            {projects.other.map((project, idx) => (
+              <ProjectCard
+                key={idx}
+                project={{
+                  ...project,
+                  color: 'neon-border',
+                }}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   )
 }
