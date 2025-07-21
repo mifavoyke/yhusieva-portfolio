@@ -21,8 +21,8 @@ export default function Home() {
             Welcome to my world
           </h1>
 
-          <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10 w-170">
-            Hi, I'm Yeva — a software engineer with a taste for sleek design, elegant code, and a touch of cyberpunk flair.
+          <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10 w-150">
+            Hi, I'm Yeva, a software engineer.
             {"\n\n"}
             I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.
           </p>

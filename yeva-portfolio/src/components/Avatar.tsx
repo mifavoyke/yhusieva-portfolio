@@ -10,7 +10,7 @@ function Model() {
     const { scene } = useGLTF('/models/model2.glb')
 
     // Move the model down slightly
-    scene.position.y = 0.5
+    scene.position.y = 0.25
 
     // Animate rotation and float
     useFrame((state, delta) => {
@@ -23,7 +23,7 @@ function Model() {
     })
 
     return (
-        <group ref={groupRef} scale={1.5}>
+        <group ref={groupRef} scale={1.8}>
             <primitive object={scene} />
         </group>
     )
