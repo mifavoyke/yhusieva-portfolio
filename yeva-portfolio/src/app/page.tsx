@@ -11,17 +11,17 @@ export default function Home() {
 
       {/* HERO */}
       <section className="flex flex-col-reverse md:flex-row justify-center items-center gap-10">
-        <div className="w-full md:w-1/3 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center">
           <Avatar />
         </div>
 
         {/* About */}
-        <div className="w-full md:w-1/3 text-left">
+        <div className="w-full md:w-1/2 text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
             Welcome to my world
           </h1>
 
-          <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10">
+          <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10 w-170">
             Hi, I'm Yeva — a software engineer with a taste for sleek design, elegant code, and a touch of cyberpunk flair.
             {"\n\n"}
             I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.

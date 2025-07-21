@@ -10,7 +10,7 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
 
   return (
     <motion.div
-      className={`relative ${highlighted ? 'w-80 h-80' : 'w-64 h-64'} text-white cursor-pointer ${floating ? 'animate-floating' : ''} group`}
+      className={`relative ${highlighted ? 'w-85 h-85' : 'w-75 h-75'} text-white cursor-pointer ${floating ? 'animate-floating' : ''} group`}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
@@ -18,7 +18,7 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
         className={`absolute w-full h-full rounded-xl ${floating
-          ? 'bg-[radial-gradient(circle_at_center,_#e879f9,_#9333ea,_#0a0a0a00)]'
+          ? 'bg-[radial-gradient(circle_at_center,_#D74CEC,_#9333ea,_#0a0a0a00)]'
           : project.color === 'neon-border'
             ? 'bg-zinc-950 border border-fuchsia-400/30 shadow-[0_0_15px_#f0abfc44] hover:shadow-[0_0_25px_#f0abfcaa]'
             : project.color
@@ -29,7 +29,10 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
       >
         <div className="flex flex-col items-center justify-center h-full text-center p-4">
           <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-          <p className="text-sm text-fuchsia-200">{project.description}</p>
+          <p className="text-sm text-fuchsia-200 mb-3">{project.description}</p>
+          <div className="flex flex-wrap justify-center gap-x-2 text-sm text-fuchsia-300">
+            {project.tech.join(' • ')}
+          </div>
         </div>
       </motion.div>
       <motion.div
@@ -42,12 +45,6 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
       >
         <p className="text-sm mb-1 text-purple-400">{project.date}</p>
         <p className="text-sm mb-3">⏱ {project.hours} hours</p>
-        <p className="text-sm mb-1">Tech used:</p>
-        <ul className="list-disc list-inside text-sm text-fuchsia-300 mb-2">
-          {project.tech.map((tool: string, idx: number) => (
-            <li key={idx}>{tool}</li>
-          ))}
-        </ul>
         {project.link && (
           <a
             href={project.link}
@@ -62,7 +59,7 @@ function ProjectCard({ project, floating = false, highlighted = false }: any) {
           <img
             src={project.image}
             alt={project.title}
-            className="mt-2 w-full rounded-md object-cover"
+            className="mt-2 w-full h-45 rounded-md object-cover"
           />
         )}
       </motion.div>
