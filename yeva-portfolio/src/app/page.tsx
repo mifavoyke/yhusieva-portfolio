@@ -35,57 +35,50 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* CONTACT */}
-      <section className="py-25 px-10 text-center relative z-10">
-        <div className="max-w-2xl mx-auto bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 text-purple-500">
-          <h2 className="text-3xl font-semibold mb-8">Contact Me</h2>
-          <p className="max-w-3xl text-base leading-relaxed text-neutral-300 mb-10 text-left">
-            <b>Email: </b><a href="mailto:husievayeva@gmail.com" className="text-neutral-300 hover:text-fuchsia-300 transition">yevahusieva@gmail.com</a>
+      <section className="py-24 px-10 text-center relative z-10">
+        <div className="max-w-2xl mx-auto bg-zinc-900/80 p-8 rounded-2xl border border-fuchsia-400/20 shadow-[0_0_30px_#f0abfc33] text-purple-400">
+          <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
+
+          <p className="text-base text-neutral-300 mb-4">
+            I'd love to hear from you, whether it's a project, opportunity, or just a friendly cyber wave.
           </p>
-          <form
-            className="flex flex-col gap-6"
-            onSubmit={(e) => {
-              e.preventDefault()
-              const form = e.target as HTMLFormElement
-              const formData = new FormData(form)
-              console.log('Form submitted:', {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message'),
-              })
-              form.reset()
-            }}
-          >
-            <input
-              name="name"
-              type="text"
-              placeholder="Your name"
-              required
-              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Your email"
-              required
-              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
-            />
-            <textarea
-              name="message"
-              rows={5}
-              placeholder="Your message"
-              required
-              className="bg-zinc-800/90 p-3 rounded-lg text-neutral-200 border border-zinc-700 focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="relative px-6 py-3 rounded-xl font-medium text-neutral-200 group transition-all duration-300"
-            >
-              <span className="absolute inset-0 rounded-xl bg-zinc-800 group-hover:bg-gradient-to-r from-pink-500 to-purple-500 opacity-30 group-hover:opacity-100 blur-sm transition duration-300"></span>
-              <span className="relative z-10">Send Message</span>
-            </button>
-          </form>
+
+          <div className="mt-6 space-y-4 text-left">
+            <p>
+              <b className="text-fuchsia-400">Email:</b>{' '}
+              <a
+                href="mailto:husievayeva@gmail.com"
+                className="hover:text-fuchsia-300 transition"
+              >
+                husievayeva@gmail.com
+              </a>
+            </p>
+
+            <p>
+              <b className="text-fuchsia-400">GitHub:</b>{' '}
+              <a
+                href="https://github.com/mifavoyke"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fuchsia-300 transition"
+              >
+                github.com/mifavoyke
+              </a>
+            </p>
+
+            <p>
+              <b className="text-fuchsia-400">LinkedIn:</b>{' '}
+              <a
+                href="https://www.linkedin.com/in/yeva-husieva/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fuchsia-300 transition"
+              >
+                linkedin.com/in/yeva-husieva
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </div>

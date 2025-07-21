@@ -86,7 +86,7 @@ export default function ProjectsPage() {
                   highlighted={idx < 2}
                 />
                 {idx < 2 && (
-                  <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 w-55 h-7 bg-[radial-gradient(ellipse_at_center,_#F03C54cc,_#f0abfc,_#0a0a0a00)] blur-xl rounded-full z-0" />
+                  <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 w-55 h-7 bg-[radial-gradient(ellipse_at_center,_#F03C54cc,_#f0abfc99,_#0a0a0a00)] blur-xl rounded-full z-0" />
                 )}
               </div>
             ))}
