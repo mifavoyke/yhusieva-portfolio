@@ -10,7 +10,7 @@ function Model() {
     const { scene } = useGLTF('/models/model2.glb')
 
     // Move the model down slightly
-    scene.position.y = 0.6
+    scene.position.y = 0.5
 
     // Animate rotation and float
     useFrame((state, delta) => {

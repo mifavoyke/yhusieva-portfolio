@@ -2,6 +2,7 @@
 
 import BackgroundGlow from '../components/BackgroundGlow'
 import Avatar from '../components/Avatar'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -9,23 +10,34 @@ export default function Home() {
       <BackgroundGlow />
 
       {/* HERO */}
-      <Avatar />
-      <section className="min-h-screen flex flex-col justify-center items-center px-2 text-center -mt-325">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
-          Welcome to my world
-        </h1>
-      </section>
+      <section className="flex flex-col-reverse md:flex-row justify-center items-center gap-10">
+        <div className="w-full md:w-1/3 flex justify-center">
+          <Avatar />
+        </div>
 
-      {/* ABOUT */}
-      <section className="py-10 px-6 flex flex-col items-center text-center mt-70">
-        <h2 className="text-3xl font-semibold mb-8 text-pink-400">About Me</h2>
-        <p className="max-w-3xl text-lg leading-relaxed text-neutral-300 mb-5">
-          Hi, I'm Yeva — a software engineer with a taste for sleek design, elegant code, and a touch of cyberpunk flair. I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.
-        </p>
+        {/* About */}
+        <div className="w-full md:w-1/3 text-left">
+          <h1 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-pink-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
+            Welcome to my world
+          </h1>
+
+          <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10">
+            Hi, I'm Yeva — a software engineer with a taste for sleek design, elegant code, and a touch of cyberpunk flair.
+            {"\n\n"}
+            I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.
+          </p>
+
+          {/* Button */}
+          <Link href="/projects">
+            <button className="px-8 py-3 text-lg border border-fuchsia-400/30 text-white rounded-lg shadow-[0_0_20px_#f0abfc44] hover:shadow-[0_0_30px_#f0abfcaa] transition duration-200">
+              See my projects →
+            </button>
+          </Link>
+        </div>
       </section>
 
       {/* CONTACT */}
-      <section className="py-20 px-6 text-center relative z-10">
+      <section className="py-25 px-10 text-center relative z-10">
         <div className="max-w-2xl mx-auto bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 text-purple-500">
           <h2 className="text-3xl font-semibold mb-8">Contact Me</h2>
           <p className="max-w-3xl text-base leading-relaxed text-neutral-300 mb-10 text-left">
