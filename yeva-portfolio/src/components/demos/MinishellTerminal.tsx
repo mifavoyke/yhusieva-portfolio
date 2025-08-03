@@ -109,7 +109,7 @@ export default function MinishellDemo() {
                     return 'Once upon a shell, there was a prompt that knew love.';
 
                 case 'baby':
-                    return '💌  From the hottest girl to the hottest guy...\r\n\x1b]8;;/projects/.private\x1b\\Click here for the private page\x1b]8;;\x1b\\';
+                    return '💌  From the hottest girl to the hottest guy...\r\n\x1b]8;;https://yhusieva-portfolio-github-hfsvcyf6a-mifavoykes-projects.vercel.app/projects/.private\x1b\\Click here for the private page\x1b]8;;\x1b\\';
 
                 case 'clear':
                     term.clear();
