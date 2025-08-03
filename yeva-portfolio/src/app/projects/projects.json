@@ -7,7 +7,9 @@
       "hours": 90,
       "tech": ["C", "Raytracing", "Physics of Light"],
       "link": "https://github.com/mifavoyke/miniRT",
-      "image": "/minirt.png"
+      "image": "/minirt.png",
+      "team": true,
+      "demo": "minirt"
     },
     {
       "title": "FdF",
@@ -16,7 +18,9 @@
       "hours": 60,
       "tech": ["C", "Graphics"],
       "link": "https://github.com/mifavoyke/FdF",
-      "image": "/fdf.png"
+      "image": "/fdf.png",
+      "team": false,
+      "demo": "minirt"
     }
   ],
   "hackathons": [
@@ -27,7 +31,9 @@
       "hours": 36,
       "tech": ["Python", "Machine Learning", "Next.js", "Typescript"],
       "link": "https://github.com/mifavoyke/Rackaton",
-      "image": "/rackaton.png"
+      "image": "/rackaton.png",
+      "team": false,
+      "demo": "minirt"
     },
     {
       "title": "GreenHack",
@@ -36,18 +42,22 @@
       "hours": 48,
       "tech": ["Python", "Data Pre-processing", "Leaflet.js"],
       "link": "https://github.com/mifavoyke/GreenHack",
-      "image": "/greenhack.png"
+      "image": "/greenhack.png",
+      "team": true,
+      "demo": "minirt"
     }
   ],
   "other": [
     {
       "title": "Minishell",
-      "description": "That's my own shell. Handles pipes, redirections, built-ins, signal handling and environment variables.",
+      "description": "That's my own shell. Handles pipes, redirections, built-ins, signals and environment variables.",
       "date": "Jan-Feb 2024",
       "hours": 90,
       "tech": ["C", "Unix", "System Calls"],
       "link": "https://github.com/bratzwitch/minishell",
-      "image": "/minishell.gif"
+      "image": "/minishell.gif",
+      "team": true,
+      "demo": "minishell"
     },
     {
       "title": "Philosophers",
@@ -56,7 +66,9 @@
       "hours": 35,
       "tech": ["C", "POSIX Threads", "Concurrency"],
       "link": "https://github.com/mifavoyke/Philosophers",
-      "image": "/philosophers.webp"
+      "image": "/philosophers.webp",
+      "team": false,
+      "demo": "minirt"
     },
     {
       "title": "Push_swap",
@@ -65,7 +77,9 @@
       "hours": 40,
       "tech": ["C", "Quicksort Algorithm"],
       "link": "https://github.com/mifavoyke/Push_swap",
-      "image": "/pushswap.png"
+      "image": "/pushswap.png",
+      "team": false,
+      "demo": "minirt"
     }
   ]
 }
