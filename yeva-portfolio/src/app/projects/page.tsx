@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 const MinishellDemo = dynamic(() => import('../../components/demos/MinishellTerminal'), {
   ssr: false,
 })
+import MiniRTDemo from '../../components/demos/MiniRTDemo'
 
 /** ====================================================================================== */
 // MODAL
@@ -52,7 +53,16 @@ function ProjectModal({ project, onClose }: any) {
               {project.title.toLowerCase() === "minishell" ? (
                 <MinishellDemo />
               ) : project.title.toLowerCase() === "minirt" ? (
-                // <MinishellDemo />
+                <MiniRTDemo />
+              ) : project.title.toLowerCase() === "fdf" ? (
+                <p>{project.demo}</p>
+              ) : project.title.toLowerCase() === "pushswap" ? (
+                <p>{project.demo}</p>
+              ) : project.title.toLowerCase() === "philosophers" ? (
+                <p>{project.demo}</p>
+              ) : project.title.toLowerCase() === "rackaton" ? (
+                <p>{project.demo}</p>
+              ) : project.title.toLowerCase() === "greehack" ? (
                 <p>{project.demo}</p>
               ) : (
                 <p>{project.demo}</p>
@@ -60,6 +70,7 @@ function ProjectModal({ project, onClose }: any) {
             </div>
           </div>
         )}
+
         {project.link && (
           <a
             href={project.link}

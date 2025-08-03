@@ -4,7 +4,7 @@
       "title": "miniRT",
       "description": "A mini raytracer built from scratch in C. Renders realistic 3D scenes with lights, shadows, and reflection.",
       "date": "Apr-May 2025",
-      "hours": 90,
+      "hours": 70,
       "tech": ["C", "Raytracing", "Physics of Light"],
       "link": "https://github.com/mifavoyke/miniRT",
       "image": "/minirt.png",
@@ -15,12 +15,12 @@
       "title": "FdF",
       "description": "A wireframe terrain renderer in isometric projection. Parses maps and draws them with depth.",
       "date": "August 2024",
-      "hours": 60,
+      "hours": 50,
       "tech": ["C", "Graphics"],
       "link": "https://github.com/mifavoyke/FdF",
       "image": "/fdf.png",
       "team": false,
-      "demo": "minirt"
+      "demo": "fdf"
     }
   ],
   "hackathons": [
@@ -28,23 +28,23 @@
       "title": "Rackaton",
       "description": "A prediction tool that assesses the risk of breast cancer recurrence based on given health indicators.",
       "date": "March 2025",
-      "hours": 36,
+      "hours": 48,
       "tech": ["Python", "Machine Learning", "Next.js", "Typescript"],
       "link": "https://github.com/mifavoyke/Rackaton",
       "image": "/rackaton.png",
       "team": false,
-      "demo": "minirt"
+      "demo": "rackaton"
     },
     {
       "title": "GreenHack",
       "description": "A web application that calculates and visualises paths for optimal route for building power grids.",
       "date": "May 2025",
-      "hours": 48,
+      "hours": 36,
       "tech": ["Python", "Data Pre-processing", "Leaflet.js"],
       "link": "https://github.com/mifavoyke/GreenHack",
       "image": "/greenhack.png",
       "team": true,
-      "demo": "minirt"
+      "demo": "greehack"
     }
   ],
   "other": [
@@ -52,7 +52,7 @@
       "title": "Minishell",
       "description": "That's my own shell. Handles pipes, redirections, built-ins, signals and environment variables.",
       "date": "Jan-Feb 2024",
-      "hours": 90,
+      "hours": 80,
       "tech": ["C", "Unix", "System Calls"],
       "link": "https://github.com/bratzwitch/minishell",
       "image": "/minishell.gif",
@@ -68,7 +68,7 @@
       "link": "https://github.com/mifavoyke/Philosophers",
       "image": "/philosophers.webp",
       "team": false,
-      "demo": "minirt"
+      "demo": "philosophers"
     },
     {
       "title": "Push_swap",
@@ -79,7 +79,7 @@
       "link": "https://github.com/mifavoyke/Push_swap",
       "image": "/pushswap.png",
       "team": false,
-      "demo": "minirt"
+      "demo": "pushswap"
     }
   ]
 }
