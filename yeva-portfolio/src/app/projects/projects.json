@@ -7,7 +7,7 @@
       "hours": 70,
       "tech": ["C", "Raytracing", "Physics of Light"],
       "link": "https://github.com/mifavoyke/miniRT",
-      "image": "/minirt.png",
+      "image": "/minirt1.png",
       "team": true,
       "demo": "minirt"
     },

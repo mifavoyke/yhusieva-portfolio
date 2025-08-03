@@ -113,7 +113,7 @@ function ProjectCard({ project, floating = false, highlighted = false, onClick }
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-50 object-cover rounded-lg shadow-md hover:shadow-fuchsia-500/50 transition opacity-90"
+              className="w-full h-50 object-cover rounded-lg shadow-md hover:shadow-fuchsia-500/50 transition"
             />
           )}
         </div>
