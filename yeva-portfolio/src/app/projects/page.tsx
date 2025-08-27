@@ -9,6 +9,8 @@ const MinishellDemo = dynamic(() => import('../../components/demos/MinishellTerm
   ssr: false,
 })
 import MiniRTDemo from '../../components/demos/MiniRTDemo'
+import FdFDemo from '../../components/demos/FDFDemo'
+import RackathonRiskDemo from '../../components/demos/RackathonRiskDemo'
 
 /** ====================================================================================== */
 // MODAL
@@ -55,13 +57,13 @@ function ProjectModal({ project, onClose }: any) {
               ) : project.title.toLowerCase() === "minirt" ? (
                 <MiniRTDemo />
               ) : project.title.toLowerCase() === "fdf" ? (
-                <p>{project.demo}</p>
+                <FdFDemo mapKey="42" />
               ) : project.title.toLowerCase() === "pushswap" ? (
                 <p>{project.demo}</p>
               ) : project.title.toLowerCase() === "philosophers" ? (
                 <p>{project.demo}</p>
               ) : project.title.toLowerCase() === "rackaton" ? (
-                <p>{project.demo}</p>
+                <RackathonRiskDemo />
               ) : project.title.toLowerCase() === "greehack" ? (
                 <p>{project.demo}</p>
               ) : (

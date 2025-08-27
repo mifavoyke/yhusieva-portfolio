@@ -109,7 +109,7 @@ export default function MinishellDemo() {
                     return 'Once upon a shell, there was a prompt that knew love.';
 
                 case 'baby':
-                    return '💌  From the hottest girl to the hottest guy...\r\nhttps://www.canva.com/design/DAGvBlD2sPc/2LcamyBw-UffkSodO9ZJFg/edit?utm_content=DAGvBlD2sPc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton';
+                    return 'Love not found. Try again later.';
 
                 case 'clear':
                     term.clear();

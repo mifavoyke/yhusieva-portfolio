@@ -7,7 +7,7 @@
       "hours": 70,
       "tech": ["C", "Raytracing", "Physics of Light"],
       "link": "https://github.com/mifavoyke/miniRT",
-      "image": "/minirt1.png",
+      "image": "/minirt.png",
       "team": true,
       "demo": "minirt"
     },
@@ -66,7 +66,7 @@
       "hours": 35,
       "tech": ["C", "POSIX Threads", "Concurrency"],
       "link": "https://github.com/mifavoyke/Philosophers",
-      "image": "/philosophers.webp",
+      "image": "/philosophers.jpg.webp",
       "team": false,
       "demo": "philosophers"
     },
