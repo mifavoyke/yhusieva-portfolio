@@ -10,7 +10,7 @@ const MinishellDemo = dynamic(() => import('../../components/demos/MinishellTerm
 })
 import MiniRTDemo from '../../components/demos/MiniRTDemo'
 import FdFDemo from '../../components/demos/FDFDemo'
-import RackathonRiskDemo from '../../components/demos/RackathonRiskDemo'
+import PhiloDemo from '../../components/demos/PhiloDemo'
 
 /** ====================================================================================== */
 // MODAL
@@ -52,20 +52,20 @@ function ProjectModal({ project, onClose }: any) {
           <div className="mb-6">
             <h4 className="text-lg font-medium text-fuchsia-400 mb-2">Live Demo</h4>
             <div className="bg-zinc-800/70 p-4 rounded-lg text-sm text-neutral-200 shadow-inner">
-              {project.title.toLowerCase() === "minishell" ? (
+              {project.title === "Minishell" ? (
                 <MinishellDemo />
-              ) : project.title.toLowerCase() === "minirt" ? (
+              ) : project.title === "miniRT" ? (
                 <MiniRTDemo />
-              ) : project.title.toLowerCase() === "fdf" ? (
-                <FdFDemo mapKey="42" />
-              ) : project.title.toLowerCase() === "pushswap" ? (
-                <p>{project.demo}</p>
-              ) : project.title.toLowerCase() === "philosophers" ? (
-                <p>{project.demo}</p>
-              ) : project.title.toLowerCase() === "rackaton" ? (
-                <RackathonRiskDemo />
-              ) : project.title.toLowerCase() === "greehack" ? (
-                <p>{project.demo}</p>
+              ) : project.title === "FdF" ? (
+                <FdFDemo />
+              ) : project.title === "Philosophers" ? (
+                <PhiloDemo />
+              ) : project.title === "Push_swap" ? (
+                <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
+              ) : project.title === "Rackaton" ? (
+                <video src="/videos/rackathon-demo.mp4" controls autoPlay loop muted />
+              ) : project.title === "GreenHack" ? (
+                <video src="/videos/green2.mp4" controls autoPlay loop muted />
               ) : (
                 <p>{project.demo}</p>
               )}

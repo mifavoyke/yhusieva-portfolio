@@ -109,7 +109,7 @@ export default function MinishellDemo() {
                     return 'Once upon a shell, there was a prompt that knew love.';
 
                 case 'baby':
-                    return 'Love not found. Try again later.';
+                    return 'Heart not found. Try again later.';
 
                 case 'clear':
                     term.clear();

@@ -24,7 +24,9 @@ export default function Home() {
           <p className="text-lg leading-relaxed text-neutral-300 whitespace-pre-line mb-10 w-150">
             Hi, I'm Yeva, a software engineer.
             {"\n\n"}
-            I love building immersive digital experiences and solving beautiful, messy problems. This portfolio is my playground.
+            I like to come up with unrealistic concepts in my head, be terrified
+            by the potential complexity of implementing them and eventually seeing the final result
+            which looks nothing like I initially imagined, but somehow cooler.
           </p>
 
           {/* Button */}
@@ -41,7 +43,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
 
           <p className="text-base text-neutral-300 mb-4">
-            I'd love to hear from you, whether it's a project, opportunity, or just a friendly cyber wave.
+            I'd love to hear from you, whether it's a project, opportunity or just a friendly cyber wave.
           </p>
 
           <div className="mt-6 space-y-4 text-left">
