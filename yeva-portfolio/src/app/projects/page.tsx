@@ -48,30 +48,25 @@ function ProjectModal({ project, onClose }: any) {
         </div>
 
         {/* Demo section */}
-        {project.demo && (
-          <div className="mb-6">
-            <h4 className="text-lg font-medium text-fuchsia-400 mb-2">Live Demo</h4>
-            <div className="bg-zinc-800/70 p-4 rounded-lg text-sm text-neutral-200 shadow-inner">
-              {project.title === "Minishell" ? (
-                <MinishellDemo />
-              ) : project.title === "miniRT" ? (
-                <MiniRTDemo />
-              ) : project.title === "FdF" ? (
-                <FdFDemo />
-              ) : project.title === "Philosophers" ? (
-                <PhiloDemo />
-              ) : project.title === "Push_swap" ? (
-                <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
-              ) : project.title === "Rackaton" ? (
-                <video src="/videos/rackathon-demo.mp4" controls autoPlay loop muted />
-              ) : project.title === "GreenHack" ? (
-                <video src="/videos/green2.mp4" controls autoPlay loop muted />
-              ) : (
-                <p>{project.demo}</p>
-              )}
-            </div>
-          </div>
-        )}
+        <div className="bg-zinc-800/70 p-4 rounded-lg text-sm text-neutral-200 shadow-inner max-h-[500px] overflow-y-auto">
+          {project.title === "Minishell" ? (
+            <MinishellDemo />
+          ) : project.title === "miniRT" ? (
+            <MiniRTDemo />
+          ) : project.title === "FdF" ? (
+            <FdFDemo />
+          ) : project.title === "Philosophers" ? (
+            <PhiloDemo />
+          ) : project.title === "Push_swap" ? (
+            <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
+          ) : project.title === "Rackaton" ? (
+            <video src="/videos/rackathon-demo.mp4" controls autoPlay loop muted />
+          ) : project.title === "GreenHack" ? (
+            <video src="/videos/green2.mp4" controls autoPlay loop muted />
+          ) : (
+            <p>{project.demo}</p>
+          )}
+        </div>
 
         {project.link && (
           <a

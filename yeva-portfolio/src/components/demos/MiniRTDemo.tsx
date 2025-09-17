@@ -7,7 +7,7 @@ import { Suspense } from 'react'
 
 export default function MiniRTDemo() {
   return (
-    <div className="w-full h-96 rounded-lg overflow-hidden bg-black">
+    <div className="w-220 h-140 rounded-lg overflow-hidden bg-black">
       <Canvas
         shadows
         camera={{ position: [3, 2, 5], fov: 40 }}
