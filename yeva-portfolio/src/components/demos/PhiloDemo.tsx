@@ -19,7 +19,7 @@ type ScenarioKey = 'die' | 'live' | 'eatN'
  * - Simulates dining philosophers using timers (not real threads).
  * - Copy/paste into components/demos/PhiloDemo.tsx and import it.
  */
-export default function PhiloDemo(): JSX.Element {
+export default function PhiloDemo(): React.JSX.Element {
   // UI controls
   const [scenario, setScenario] = useState<ScenarioKey>('live')
   const [num, setNum] = useState<number>(5)
