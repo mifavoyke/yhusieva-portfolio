@@ -59,7 +59,11 @@ function ProjectModal({ project, onClose }: any) {
           ) : project.title === "Philosophers" ? (
             <PhiloDemo />
           ) : project.title === "Snap" ? (
-            <Lens lensUrl="https://lens.snap.com/experience/89f332fb-b56c-4c07-b28a-7a9ad6e3f66d" />
+            <Lens 
+              apiToken="eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY4MjA5NzQwLCJzdWIiOiJkMDc5ZDA3Mi1lZjIwLTRlOWMtYTI1MC02NmZkNjEwZjc5YzF-UFJPRFVDVElPTn4xYzBmOWUzZC01MTUzLTQ5OWEtOWY5OC02NWRlOGJjZWJmZjEifQ.v2T_ELNWkBSrYnRig5hNW94z_zbW1wUpZ8vW7O-48Wg"
+              lensId="2051a49d-1848-4c33-9734-65450de02c11"
+              lensGroupId="528041a9-aa36-47ea-bc71-76198f3ee514"
+            />
           ) : project.title === "Push_swap" ? (
             <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
           ) : project.title === "Rackaton" ? (
