@@ -11,6 +11,7 @@ const MinishellDemo = dynamic(() => import('../../components/demos/MinishellTerm
 import MiniRTDemo from '../../components/demos/MiniRTDemo'
 import FdFDemo from '../../components/demos/FDFDemo'
 import PhiloDemo from '../../components/demos/PhiloDemo'
+import Lens from '../../components/demos/LensStudio'
 
 /** ====================================================================================== */
 // MODAL
@@ -57,6 +58,8 @@ function ProjectModal({ project, onClose }: any) {
             <FdFDemo />
           ) : project.title === "Philosophers" ? (
             <PhiloDemo />
+          ) : project.title === "Snap" ? (
+            <Lens lensUrl="https://lens.snap.com/experience/89f332fb-b56c-4c07-b28a-7a9ad6e3f66d" />
           ) : project.title === "Push_swap" ? (
             <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
           ) : project.title === "Rackaton" ? (
