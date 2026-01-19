@@ -11,7 +11,8 @@ const MinishellDemo = dynamic(() => import('../../components/demos/MinishellTerm
 import MiniRTDemo from '../../components/demos/MiniRTDemo'
 import FdFDemo from '../../components/demos/FDFDemo'
 import PhiloDemo from '../../components/demos/PhiloDemo'
-import Lens from '../../components/demos/LensStudio'
+import {LensController} from '../../components/demos/LensStudio'
+import { CameraKit } from '../../components/demos/CameraKitContext';
 
 /** ====================================================================================== */
 // MODAL
@@ -59,11 +60,12 @@ function ProjectModal({ project, onClose }: any) {
           ) : project.title === "Philosophers" ? (
             <PhiloDemo />
           ) : project.title === "Snap" ? (
-            <Lens 
-              apiToken="eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY4MjA5NzQwLCJzdWIiOiJkMDc5ZDA3Mi1lZjIwLTRlOWMtYTI1MC02NmZkNjEwZjc5YzF-UFJPRFVDVElPTn4xYzBmOWUzZC01MTUzLTQ5OWEtOWY5OC02NWRlOGJjZWJmZjEifQ.v2T_ELNWkBSrYnRig5hNW94z_zbW1wUpZ8vW7O-48Wg"
-              lensId="2051a49d-1848-4c33-9734-65450de02c11"
-              lensGroupId="528041a9-aa36-47ea-bc71-76198f3ee514"
-            />
+            
+            <CameraKit>
+              <LensController
+                lensId="2051a49d-1848-4c33-9734-65450de02c11"
+              />
+            </CameraKit>
           ) : project.title === "Push_swap" ? (
             <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
           ) : project.title === "Rackaton" ? (
