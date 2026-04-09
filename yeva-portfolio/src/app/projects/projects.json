@@ -80,17 +80,6 @@
       "image": "/pushswap.png",
       "team": false,
       "demo": "pushswap"
-    },
-    {
-      "title": "Snap",
-      "description": "Lens studio test",
-      "date": "Jan 2026",
-      "hours": 6,
-      "tech": ["AR", "Snapchat"],
-      "link": "https://github.com/mifavoyke/my-first-lens",
-      "image": "/snap.svg",
-      "team": false,
-      "demo": ""
     }
   ]
 }
