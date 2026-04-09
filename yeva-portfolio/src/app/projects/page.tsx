@@ -12,7 +12,7 @@ import MiniRTDemo from '../../components/demos/MiniRTDemo'
 import FdFDemo from '../../components/demos/FDFDemo'
 import PhiloDemo from '../../components/demos/PhiloDemo'
 import {LensController} from '../../components/demos/LensStudio'
-import { CameraKit } from '../../components/demos/CameraKitContext';
+// import { CameraKit } from '../../components/demos/CameraKitContext';
 
 /** ====================================================================================== */
 // MODAL
@@ -59,13 +59,13 @@ function ProjectModal({ project, onClose }: any) {
             <FdFDemo />
           ) : project.title === "Philosophers" ? (
             <PhiloDemo />
-          ) : project.title === "Snap" ? (
+          // ) : project.title === "Snap" ? (
             
-            <CameraKit>
-              <LensController
-                lensId="2051a49d-1848-4c33-9734-65450de02c11"
-              />
-            </CameraKit>
+          //   <CameraKit>
+          //     <LensController
+          //       lensId="2051a49d-1848-4c33-9734-65450de02c11"
+          //     />
+          //   </CameraKit>
           ) : project.title === "Push_swap" ? (
             <video src="/videos/pushswap-demo.mp4" controls autoPlay loop muted />
           ) : project.title === "Rackaton" ? (
